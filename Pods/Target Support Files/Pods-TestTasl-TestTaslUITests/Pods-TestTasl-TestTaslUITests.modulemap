@@ -1,0 +1,6 @@
+framework module Pods_TestTasl_TestTaslUITests {
+  umbrella header "Pods-TestTasl-TestTaslUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
