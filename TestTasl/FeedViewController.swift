@@ -9,10 +9,17 @@ import UIKit
 
 class FeedViewController: UIViewController {
 
+    let backgroundImageView = UIImageView()
+
+    let backgroundImage = UIImage(named: "Background")
+    
+    let backButton = UIButton(type: .system)
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .yellow
     }
     
 

@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		4113A8E9ADA7023177AC3F90 /* Pods_TestTasl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D46EBCC9CF4E8E8F16F66F87 /* Pods_TestTasl.framework */; };
+		441BDB942799361A00AF857B /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441BDB932799361A00AF857B /* CollectionViewCell.swift */; };
+		441BDB9627993AB200AF857B /* ButtonsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441BDB9527993AB200AF857B /* ButtonsModel.swift */; };
+		441BDB9827997E1700AF857B /* DashedLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441BDB9727997E1700AF857B /* DashedLine.swift */; };
+		441BDB9C279982AE00AF857B /* DashedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441BDB9B279982AE00AF857B /* DashedView.swift */; };
 		4461DE092797E0730004C056 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461DE082797E0730004C056 /* Colors.swift */; };
 		4461DE0D27980E8B0004C056 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461DE0C27980E8B0004C056 /* FeedViewController.swift */; };
 		4461DE0F27980E9A0004C056 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461DE0E27980E9A0004C056 /* TasksViewController.swift */; };
 		4461DE1127980EA80004C056 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461DE1027980EA80004C056 /* StoreViewController.swift */; };
 		4461DE1327980EB30004C056 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461DE1227980EB30004C056 /* ProfileViewController.swift */; };
 		4461DE15279813270004C056 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461DE14279813270004C056 /* TabbarViewController.swift */; };
+		44ED327027982E58000C25DF /* ShadowClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ED326F27982E58000C25DF /* ShadowClass.swift */; };
 		44FF4CFC2797C4100038132C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FF4CFB2797C4100038132C /* AppDelegate.swift */; };
 		44FF4CFE2797C4100038132C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FF4CFD2797C4100038132C /* SceneDelegate.swift */; };
 		44FF4D002797C4100038132C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FF4CFF2797C4100038132C /* ViewController.swift */; };
@@ -48,12 +53,17 @@
 		101A0A2920C5DB85222687B7 /* Pods_TestTasl_TestTaslUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestTasl_TestTaslUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DD235D7C30A7DAC8273CBEB /* Pods-TestTaslTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTaslTests.debug.xcconfig"; path = "Target Support Files/Pods-TestTaslTests/Pods-TestTaslTests.debug.xcconfig"; sourceTree = "<group>"; };
 		417EC3BBCDF1622734179D3A /* Pods-TestTasl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTasl.debug.xcconfig"; path = "Target Support Files/Pods-TestTasl/Pods-TestTasl.debug.xcconfig"; sourceTree = "<group>"; };
+		441BDB932799361A00AF857B /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		441BDB9527993AB200AF857B /* ButtonsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsModel.swift; sourceTree = "<group>"; };
+		441BDB9727997E1700AF857B /* DashedLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedLine.swift; sourceTree = "<group>"; };
+		441BDB9B279982AE00AF857B /* DashedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedView.swift; sourceTree = "<group>"; };
 		4461DE082797E0730004C056 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		4461DE0C27980E8B0004C056 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		4461DE0E27980E9A0004C056 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		4461DE1027980EA80004C056 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		4461DE1227980EB30004C056 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4461DE14279813270004C056 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		44ED326F27982E58000C25DF /* ShadowClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowClass.swift; sourceTree = "<group>"; };
 		44FF4CF82797C4100038132C /* TestTasl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTasl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44FF4CFB2797C4100038132C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44FF4CFD2797C4100038132C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,11 +142,16 @@
 				44FF4CFD2797C4100038132C /* SceneDelegate.swift */,
 				4461DE14279813270004C056 /* TabbarViewController.swift */,
 				44FF4CFF2797C4100038132C /* ViewController.swift */,
+				441BDB932799361A00AF857B /* CollectionViewCell.swift */,
 				4461DE0C27980E8B0004C056 /* FeedViewController.swift */,
 				4461DE0E27980E9A0004C056 /* TasksViewController.swift */,
 				4461DE1027980EA80004C056 /* StoreViewController.swift */,
 				4461DE1227980EB30004C056 /* ProfileViewController.swift */,
 				4461DE082797E0730004C056 /* Colors.swift */,
+				441BDB9B279982AE00AF857B /* DashedView.swift */,
+				441BDB9727997E1700AF857B /* DashedLine.swift */,
+				441BDB9527993AB200AF857B /* ButtonsModel.swift */,
+				44ED326F27982E58000C25DF /* ShadowClass.swift */,
 				44FF4D012797C4100038132C /* Main.storyboard */,
 				44FF4D042797C4120038132C /* Assets.xcassets */,
 				44FF4D062797C4120038132C /* LaunchScreen.storyboard */,
@@ -424,15 +439,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				441BDB9C279982AE00AF857B /* DashedView.swift in Sources */,
+				44ED327027982E58000C25DF /* ShadowClass.swift in Sources */,
+				441BDB9627993AB200AF857B /* ButtonsModel.swift in Sources */,
 				4461DE1127980EA80004C056 /* StoreViewController.swift in Sources */,
 				44FF4D002797C4100038132C /* ViewController.swift in Sources */,
 				4461DE092797E0730004C056 /* Colors.swift in Sources */,
 				44FF4CFC2797C4100038132C /* AppDelegate.swift in Sources */,
+				441BDB9827997E1700AF857B /* DashedLine.swift in Sources */,
 				4461DE0F27980E9A0004C056 /* TasksViewController.swift in Sources */,
 				44FF4CFE2797C4100038132C /* SceneDelegate.swift in Sources */,
 				4461DE1327980EB30004C056 /* ProfileViewController.swift in Sources */,
 				4461DE0D27980E8B0004C056 /* FeedViewController.swift in Sources */,
 				4461DE15279813270004C056 /* TabbarViewController.swift in Sources */,
+				441BDB942799361A00AF857B /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
                let window = UIWindow(windowScene: windowScene)
                let navController = UINavigationController()
-               let viewController = ViewController()
+               let viewController = TabbarViewController()
 
                navController.viewControllers = [viewController]
                window.rootViewController = navController
