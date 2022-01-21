@@ -12,6 +12,7 @@
 		441BDB9627993AB200AF857B /* ButtonsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441BDB9527993AB200AF857B /* ButtonsModel.swift */; };
 		441BDB9827997E1700AF857B /* DashedLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441BDB9727997E1700AF857B /* DashedLine.swift */; };
 		441BDB9C279982AE00AF857B /* DashedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441BDB9B279982AE00AF857B /* DashedView.swift */; };
+		4450F94827999BF90015DF7D /* TabShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4450F94727999BF90015DF7D /* TabShadow.swift */; };
 		4461DE092797E0730004C056 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461DE082797E0730004C056 /* Colors.swift */; };
 		4461DE0D27980E8B0004C056 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461DE0C27980E8B0004C056 /* FeedViewController.swift */; };
 		4461DE0F27980E9A0004C056 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461DE0E27980E9A0004C056 /* TasksViewController.swift */; };
@@ -57,6 +58,7 @@
 		441BDB9527993AB200AF857B /* ButtonsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsModel.swift; sourceTree = "<group>"; };
 		441BDB9727997E1700AF857B /* DashedLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedLine.swift; sourceTree = "<group>"; };
 		441BDB9B279982AE00AF857B /* DashedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashedView.swift; sourceTree = "<group>"; };
+		4450F94727999BF90015DF7D /* TabShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabShadow.swift; sourceTree = "<group>"; };
 		4461DE082797E0730004C056 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		4461DE0C27980E8B0004C056 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		4461DE0E27980E9A0004C056 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			children = (
 				44FF4CFB2797C4100038132C /* AppDelegate.swift */,
 				44FF4CFD2797C4100038132C /* SceneDelegate.swift */,
+				4450F94727999BF90015DF7D /* TabShadow.swift */,
 				4461DE14279813270004C056 /* TabbarViewController.swift */,
 				44FF4CFF2797C4100038132C /* ViewController.swift */,
 				441BDB932799361A00AF857B /* CollectionViewCell.swift */,
@@ -450,6 +453,7 @@
 				4461DE0F27980E9A0004C056 /* TasksViewController.swift in Sources */,
 				44FF4CFE2797C4100038132C /* SceneDelegate.swift in Sources */,
 				4461DE1327980EB30004C056 /* ProfileViewController.swift in Sources */,
+				4450F94827999BF90015DF7D /* TabShadow.swift in Sources */,
 				4461DE0D27980E8B0004C056 /* FeedViewController.swift in Sources */,
 				4461DE15279813270004C056 /* TabbarViewController.swift in Sources */,
 				441BDB942799361A00AF857B /* CollectionViewCell.swift in Sources */,

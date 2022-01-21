@@ -13,6 +13,11 @@ class ViewController: UIViewController {
     
     let buttonsArray = [ButtonsModel(titleText: "Обучение"), ButtonsModel(titleText: "Задания")]
     
+    let tutorialButton = UIButton(type: .system)
+    
+    let tasksButton = UIButton(type: .system)
+    
+    lazy var buttonsStackView = UIStackView(arrangedSubviews: [tutorialButton, tasksButton])
     
     let backgroundImageView = UIImageView()
 
@@ -20,9 +25,7 @@ class ViewController: UIViewController {
     
     let backButton = UIButton(type: .system)
     
-    let instructionButton = UIButton()
-    
-    let tasksButton = UIButton()
+    var colCell : CollectionViewCell?
     
     let collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -34,8 +37,6 @@ class ViewController: UIViewController {
         cv.isScrollEnabled = false
         return cv
     }()
-    
-    lazy var buttonStack = UIStackView(arrangedSubviews: [instructionButton,tasksButton])
     
     
  
@@ -91,9 +92,11 @@ class ViewController: UIViewController {
     func setUpViews() {
         
         
+        
         view.backgroundColor = .white
         navigationController?.navigationBar.backgroundColor = .white
         navigationController?.navigationBar.tintColor = Colors.textColor
+        
         
         
         
@@ -102,7 +105,25 @@ class ViewController: UIViewController {
         
         
         setUpCollectionView()
-       
+        tutorialButton.setTitle("Обучение", for: .normal)
+        
+        tasksButton.setTitle("Задания", for: .normal)
+        
+        
+//        [tutorialButton, tasksButton].forEach { (button) in
+//            button.titleLabel?.textColor = .yellow
+//            button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+//            button.setTitleColor(Colors.neutralTextColor, for: .normal)
+//            button.tintColor = Colors.textColor
+//        }
+//
+//        buttonsStackView.axis = .horizontal
+//        buttonsStackView.distribution = .fillEqually
+//        buttonsStackView.layer.cornerRadius = 20
+//        buttonsStackView.backgroundColor = .white
+//        buttonsStackView.addShadow()
+//
+//        view.addSubview(buttonsStackView)
         
         
         
@@ -120,6 +141,13 @@ class ViewController: UIViewController {
             maker.bottom.equalToSuperview()
             
         }
+        
+//        buttonsStackView.snp.makeConstraints { make in
+//            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+//            make.left.equalToSuperview()
+//            make.right.equalToSuperview()
+//            make.height.equalTo(42)
+//        }
         
         collectionView.snp.makeConstraints { maker in
             maker.top.equalTo(view.safeAreaLayoutGuide.snp.top)
@@ -149,16 +177,45 @@ extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource{
         return 2
     }
     
+    
+    
+    
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath)
+        
+        
+        if let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell{
+            
+            cell.select()
+            
+        }
+        
+//        let dottedLine = DashedView()
+//        cell?.contentView.addSubview(dottedLine)
+//        dottedLine.snp.makeConstraints { make in
+//            make.top.equalToSuperview().inset(20)
+//            make.left.equalTo(cell!.contentView)
+//            make.right.equalTo(cell!.contentView)
+//        }
+//        cell?.layoutIfNeeded()
+    
+    
+        
+        
         
         
         
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-//        <#code#>
-//    }
+   
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell{
+            
+            cell.deselect()
+            
+        }
+    }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
