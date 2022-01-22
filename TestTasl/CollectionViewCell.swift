@@ -44,12 +44,7 @@ class CollectionViewCell: UICollectionViewCell {
     }
     
     func select() {
-//        contentView.addSubview(dashedView)
-//        dashedView.snp.makeConstraints { make in
-//            make.top.equalTo(titleLabel.snp.bottom).offset(4)
-//            make.left.equalToSuperview().inset(20)
-//            make.right.equalToSuperview().inset(20)
-//        }
+
         dashedView.alpha = 1
         titleLabel.textColor = Colors.textColor
     }

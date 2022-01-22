@@ -38,6 +38,18 @@ class ViewController: UIViewController {
         return cv
     }()
     
+    let secondCollectionView : UICollectionView = {
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.allowsMultipleSelection = false
+        cv.isUserInteractionEnabled = true
+        cv.backgroundColor = .clear
+        cv.isScrollEnabled = false
+        return cv
+        
+    }()
     
  
     
@@ -89,6 +101,25 @@ class ViewController: UIViewController {
         
     }
     
+    func setUpSecondCollectionView() {
+        
+        secondCollectionView.register(SecondCollectionViewFirstCell.self, forCellWithReuseIdentifier: "SecondCollectionViewFirstCell")
+        secondCollectionView.register(SecondCollectionViewSecondCell.self, forCellWithReuseIdentifier: "SecondCollectionViewSecondCell")
+        secondCollectionView.dataSource = self
+        secondCollectionView.delegate = self
+        secondCollectionView.backgroundColor = .clear
+//        secondCollectionView.layer.cornerRadius = 20
+//        secondCollectionView.addShadow()
+        
+        
+        
+        view.addSubview(secondCollectionView)
+        
+        
+        
+    }
+    
+    
     func setUpViews() {
         
         
@@ -105,9 +136,11 @@ class ViewController: UIViewController {
         
         
         setUpCollectionView()
-        tutorialButton.setTitle("Обучение", for: .normal)
+        setUpSecondCollectionView()
         
-        tasksButton.setTitle("Задания", for: .normal)
+//        tutorialButton.setTitle("Обучение", for: .normal)
+//
+//        tasksButton.setTitle("Задания", for: .normal)
         
         
 //        [tutorialButton, tasksButton].forEach { (button) in
@@ -131,14 +164,15 @@ class ViewController: UIViewController {
     }
 
     
+   
     
     func setUpConstraints() {
         
-        backgroundImageView.snp.makeConstraints { maker in
-            maker.top.equalToSuperview()
-            maker.left.equalToSuperview()
-            maker.right.equalToSuperview()
-            maker.bottom.equalToSuperview()
+        backgroundImageView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.bottom.equalToSuperview()
             
         }
         
@@ -149,11 +183,18 @@ class ViewController: UIViewController {
 //            make.height.equalTo(42)
 //        }
         
-        collectionView.snp.makeConstraints { maker in
-            maker.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            maker.left.equalToSuperview()
-            maker.right.equalToSuperview()
-            maker.height.equalTo(42)
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.height.equalTo(42)
+        }
+        
+        secondCollectionView.snp.makeConstraints { make in
+            make.top.equalTo(collectionView.snp.bottom).offset(20)
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.bottom.equalToSuperview()
         }
         
     }
@@ -163,7 +204,11 @@ class ViewController: UIViewController {
 extension ViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.frame.width / 2 , height: self.view.frame.height)
+        if collectionView == self.collectionView {
+            return CGSize(width: self.view.frame.width / 2 , height: self.view.frame.height)
+        }
+        return CGSize(width: self.view.frame.width  , height: self.view.frame.height)
+        
     }
 }
 
@@ -178,7 +223,12 @@ extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource{
     }
     
     
-    
+    func scrollToMenuIndex(menuIndex: Int) {
+        let indexPath = IndexPath(item: menuIndex, section: 0)
+        secondCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        
+        
+    }
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -187,45 +237,61 @@ extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource{
         if let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell{
             
             cell.select()
+            scrollToMenuIndex(menuIndex: indexPath.item)
             
         }
-        
-//        let dottedLine = DashedView()
-//        cell?.contentView.addSubview(dottedLine)
-//        dottedLine.snp.makeConstraints { make in
-//            make.top.equalToSuperview().inset(20)
-//            make.left.equalTo(cell!.contentView)
-//            make.right.equalTo(cell!.contentView)
-//        }
-//        cell?.layoutIfNeeded()
-    
-    
-        
-        
-        
-        
-        
     }
     
    
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        if let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell{
-            
-            cell.deselect()
-            
+        
+        if collectionView == self.collectionView {
+            if let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell{
+                
+                cell.deselect()
+                
+            }
+        }
+        if indexPath.item == 0 {
+            let cell = collectionView.cellForItem(at: indexPath) as? SecondCollectionViewFirstCell
+        }
+        else {
+            let cell = collectionView.cellForItem(at: indexPath) as? SecondCollectionViewSecondCell
         }
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
-        cell.generateCells(model: buttonsArray[indexPath.item])
         
-        return cell
+        if collectionView == self.collectionView{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
+            cell.generateCells(model: buttonsArray[indexPath.item])
+            
+            if (indexPath.row == 0){
+                collectionView.selectItem(at: indexPath, animated: true, scrollPosition: UICollectionView.ScrollPosition.top)
+                    cell.select()
+                }else{
+                    cell.deselect()
+                }
+                
+            return cell
+        }
+        if indexPath.item == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SecondCollectionViewFirstCell", for: indexPath) as! SecondCollectionViewFirstCell
+            return cell
+        }
+        else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SecondCollectionViewSecondCell", for: indexPath) as! SecondCollectionViewSecondCell
+            return cell
+        }
+        
     }
     
-  
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
     
     
     
